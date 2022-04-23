@@ -45,6 +45,18 @@ namespace Biblioteca.Controllers
             }
         }
 
+        // public IActionResult Login(string login, string senha)
+        // {
+        //     if(Autenticacao.verificaLoginSenha(login, senha, this))
+        //     {
+        //         return RedirectToAction("Index");
+                
+        //     }else{
+        //         ViewData["Erro"] = "Usuário/Senha incorretos";
+        //         return View();
+        //     }
+        // }
+
         public IActionResult Privacy()
         {
             return View();
