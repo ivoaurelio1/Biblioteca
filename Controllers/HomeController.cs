@@ -31,31 +31,31 @@ namespace Biblioteca.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(string login, string senha)
-        {
-            if(login != "admin" || senha != "123")
-            {
-                ViewData["Erro"] = "Senha inválida";
-                return View();
-            }
-            else
-            {
-                HttpContext.Session.SetString("user", "admin");
-                return RedirectToAction("Index");
-            }
-        }
-
         // public IActionResult Login(string login, string senha)
         // {
-        //     if(Autenticacao.verificaLoginSenha(login, senha, this))
+        //     if(login != "admin" || senha != "123")
         //     {
-        //         return RedirectToAction("Index");
-                
-        //     }else{
-        //         ViewData["Erro"] = "Usuário/Senha incorretos";
+        //         ViewData["Erro"] = "Senha inválida";
         //         return View();
         //     }
+        //     else
+        //     {
+        //         HttpContext.Session.SetString("user", "admin");
+        //         return RedirectToAction("Index");
+        //     }
         // }
+
+        public IActionResult Login(string login, string senha)
+        {
+            if(Autenticacao.verificaLoginSenha(login, senha, this))
+            {
+                return RedirectToAction("Index");
+                
+            }else{
+                ViewData["Erro"] = "Usuário/Senha incorretos";
+                return View();
+            }
+        }
 
         public IActionResult Privacy()
         {

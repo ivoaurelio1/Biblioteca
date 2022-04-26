@@ -9,8 +9,8 @@ namespace Biblioteca.Controllers
     {
         public IActionResult ListaDeUsuarios()
         {
-            // Autenticacao.CheckLogin(this);
-            // Autenticacao.verificaSeUsuarioEAdmin(this);
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
 
             return View(new UsuarioService().Listar());
         }
@@ -31,16 +31,16 @@ namespace Biblioteca.Controllers
 
         public IActionResult RegistrarUsuarios()
         {
-            // Autenticacao.CheckLogin(this);
-            // Autenticacao.verificaSeUsuarioEAdmin(this);
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
             return View();
         }
 
         [HttpPost]
         public IActionResult RegistrarUsuarios(Usuario novoUser)
         {
-            // Autenticacao.CheckLogin(this);
-            // Autenticacao.verificaSeUsuarioEAdmin(this);
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
 
             novoUser.Senha = Criptografo.TextoCriptografado(novoUser.Senha);
 
@@ -71,14 +71,14 @@ namespace Biblioteca.Controllers
 
         public IActionResult cadastroRealizado()
         {
-            // Autenticacao.CheckLogin(this);
-            // Autenticacao.verificaSeUsuarioEAdmin(this);
+            Autenticacao.CheckLogin(this);
+            Autenticacao.verificaSeUsuarioEAdmin(this);
             return View();
         }
 
         public IActionResult NeedAdmin()
         {
-            // Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this);
             return View();
         }
 

@@ -8,7 +8,7 @@ namespace Biblioteca.Controllers
     {
         public IActionResult Cadastro()
         {
-            // Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this);
             return View();
         }
 
@@ -31,7 +31,7 @@ namespace Biblioteca.Controllers
 
         public IActionResult Listagem(string tipoFiltro, string filtro, string itensPorPagina, int NumDaPagina, int PaginaAtual)
         {
-            // Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this);
             FiltrosLivros objFiltro = null;
             if(!string.IsNullOrEmpty(filtro))
             {
@@ -46,9 +46,29 @@ namespace Biblioteca.Controllers
             return View(livroService.ListarTodos(objFiltro));
         }
 
+        //listagem de acordo com o momento online (não deu tempo implementar):
+
+        // public IActionResult Listagem (string tipoFiltro, string Filtro, int p = 1)
+        // {
+        //     Autenticacao.CheckLogin(this);
+        //     Filtragem objFiltro = null;
+        //     if (!string.IsNullOrEmpty(Filtro)){
+        //         objFiltro = new Filtragem();
+        //         objFiltro.Filtro = Filtro;
+        //         objFiltro.TipoFiltro = TipoFiltro;
+        //     }
+
+        //     int quantidadePorPagina = 10;
+        //     LivroService livroService = new LivroService();
+        //     int totalDeRegistros = livroService.NumeroDeLivros();
+        //     ICollection<Livro> lista = livroService.ListarTodos(p, quantidadePorPagina, objFiltro);
+        //     ViewData["NroPagina"] = int Math.Ceiling((double) totalDeRegistros / quantidadePorPagina);
+        //     return View(lista)
+        // }
+
         public IActionResult Edicao(int id)
         {
-            // Autenticacao.CheckLogin(this);
+            Autenticacao.CheckLogin(this);
             LivroService ls = new LivroService();
             Livro l = ls.ObterPorId(id);
             return View(l);

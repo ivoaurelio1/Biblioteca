@@ -61,12 +61,12 @@ namespace Biblioteca.Controllers
 
         }
 
-        // public static void verificaSeUsuarioEAdmin(Controller controller)
-        // {
-        //     if(!(controller.HttpContext.Session.GetInt32("tipo")==Usuario.ADMIN))
-        //     {
-        //         controller.Request.HttpContext.Response.Redirect("/Usuario/NeedAdmin");
-        //     }
-        // }
+        public static void verificaSeUsuarioEAdmin(Controller controller)
+        {
+            if(!(controller.HttpContext.Session.GetInt32("tipo")==Usuario.ADMIN))
+            {
+                controller.Request.HttpContext.Response.Redirect("/Usuario/NeedAdmin");
+            }
+        }
     }
 }

@@ -14452,8 +14452,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Notebook\\Desktop\\Biblioteca\\Views\\Usuarios\\ListadeUsuarios.cshtml",
-      "TargetPath": "Views\\Usuarios\\ListadeUsuarios.cshtml",
+      "FilePath": "c:\\Users\\Notebook\\Desktop\\Biblioteca\\Views\\Usuarios\\ListaDeUsuarios.cshtml",
+      "TargetPath": "Views\\Usuarios\\ListaDeUsuarios.cshtml",
       "FileKind": "mvc"
     },
     {

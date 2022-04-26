@@ -34,11 +34,11 @@
 
         <button type="submit" class="btn btn-primary mb-2">Pesquisar</button>
 
-        <div id="SeletorPaginas">
+        <div  class="col-md-12" id="SeletorPaginas">
             <span>Páginas:</span>
             @for (int i = 1; i <= NumTotalDePag; i++)
             {
-                <span><a href="/Livro/Listagem?PaginaAtual=@i">@i, </a></span>
+                <span><a  class="btn btn-success" href="/Livro/Listagem?PaginaAtual=@i">@i </a></span>
             }
 
         </div>
